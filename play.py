@@ -64,3 +64,7 @@ class play:
                     self.game.get_pos_pacman()[1]
                 ] = " "
                 self.game.set_board(board)
+
+
+run = play()
+run.start()

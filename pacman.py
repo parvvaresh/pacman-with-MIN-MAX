@@ -5,6 +5,7 @@ from ghosts import ghosts
 from typing import Tuple, List
 import random as r
 
+
 class pacman:
     def __init__(self):
         self._ways_possible_for_ghosts = [

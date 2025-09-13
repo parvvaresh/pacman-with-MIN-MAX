@@ -1,0 +1,38 @@
+name: Python CI with Docker
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint-and-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      # Install linting tool
+      - name: Install flake8
+        run: pip install flake8
+
+      # Run lint check
+      - name: Run flake8
+        run: flake8 play.py
+
+      # Build Docker image
+      - name: Build Docker image
+        run: docker build -t my-python-app .
+
+      # Run Docker container
+      - name: Run Docker container
+        run: docker run --rm my-python-app
