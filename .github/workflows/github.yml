@@ -31,8 +31,8 @@ jobs:
 
       # Build Docker image
       - name: Build Docker image
-        run: docker build -t my-python-app .
+        run: docker build -t pacman .
 
       # Run Docker container
       - name: Run Docker container
-        run: docker run --rm my-python-app
+        run: docker run --rm pacman

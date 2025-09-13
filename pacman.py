@@ -2,7 +2,7 @@ from utility import utility
 from game import game
 from ghosts import ghosts
 
-from typing import Tuple, List
+from typing import List
 import random as r
 
 

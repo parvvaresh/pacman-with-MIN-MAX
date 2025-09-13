@@ -3,8 +3,6 @@ from game import game
 from ghosts import ghosts
 from utility import utility
 
-import time as t
-
 
 class play:
     def __init__(self) -> None:
